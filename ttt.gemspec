@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A gem containing the board logic and AI strategy"
   s.authors     = ["Anda Cabrera"]
   s.email       = 'andarcabrera@gmail.com'
-  s.files       = ["lib/board1.rb", "lib/computer_move.rb"]
+  s.files       = ["lib/ttt.rb", "lib/computer_move.rb"]
   s.homepage    =
     'http://rubygems.org/gems/board_test'
   s.license       = 'MIT'
