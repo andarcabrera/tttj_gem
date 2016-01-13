@@ -8,7 +8,7 @@ module MultiThreading
     spots_scores = []
 
      board.available_spots.each do |available_spot|
-       board.fill_spot(available_spot, self.marker)
+       board.fill_spot(available_spot, board.next_marker)
        board_copy = Marshal::load(Marshal.dump(board))
         threads << [Thread.new(board_copy) { Thread.current[:value] = -1 * alpha_beta_negamax(board_copy) }, available_spot]
        reset_spot(board, available_spot)
