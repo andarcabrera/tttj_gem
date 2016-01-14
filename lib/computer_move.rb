@@ -11,7 +11,7 @@ module ComputerMove
        board.fill_spot(available_spot, board.next_marker)
        board_copy = Marshal::load(Marshal.dump(board))
         threads << [Thread.new(board_copy) { Thread.current[:value] = -1 * alpha_beta_negamax(board_copy) }, available_spot]
-       reset_spot(board, available_spot)
+       ComputerMove.reset_spot(board, available_spot)
      end
 
      threads.each do |thread, spot|
@@ -22,7 +22,7 @@ module ComputerMove
      best_spot = spots_scores.max_by { |key, value| value }[0]
   end
 
-  def alpha_beta_negamax(board, depth = 0, alpha = - Float::INFINITY, beta = Float::INFINITY)
+  def self.alpha_beta_negamax(board, depth = 0, alpha = - Float::INFINITY, beta = Float::INFINITY)
     return 0 if board.tied_board?
     return -1 if board.solved_board?
 
@@ -46,7 +46,7 @@ module ComputerMove
 
   private
 
-  def reset_spot(board, spot)
+  def self.reset_spot(board, spot)
     board.fill_spot(spot, spot)
   end
 
