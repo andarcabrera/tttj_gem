@@ -1,3 +1,5 @@
+#TTT::Board
+# module TTT
 class Board1
 
   def initialize(markers = [], size = 9)
@@ -99,3 +101,4 @@ class Board1
   end
 
 end
+# end

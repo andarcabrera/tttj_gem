@@ -1,6 +1,6 @@
-module MultiThreading
+module ComputerMove
 
-  def multi_threading(board)
+  def self.computer_move(board)
     return board.available_spots.sample if board.available_spots.count >= 13 && board.size == 16
     return '4' if board.available_spots.count == 9 && board.size == 9
 
