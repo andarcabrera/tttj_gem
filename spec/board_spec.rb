@@ -1,10 +1,10 @@
 require 'rspec'
-require_relative '../lib/ttt'
+require_relative '../lib/ttt/board'
 
-describe Board1 do
+describe TTT::Board do
 
   let(:markers) { ['X', 'Y'] }
-  let(:board) { Board1.new(markers) }
+  let(:board) { TTT::Board.new(markers) }
 
   describe '#initialize' do
 
@@ -15,7 +15,7 @@ describe Board1 do
       end
 
       it 'creates 16 spots for a 4 row board' do
-        board = Board1.new(markers, 16)
+        board = TTT::Board.new(markers, 16)
 
         expect(board.surface.length).to eq(16)
       end
