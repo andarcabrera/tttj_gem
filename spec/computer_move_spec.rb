@@ -1,5 +1,7 @@
 require 'rspec'
+require 'spec_helper'
 require_relative '../lib/ttt/computer_move'
+
 
 describe TTT::ComputerMove do
 

@@ -1,5 +1,7 @@
 require 'rspec'
+require 'spec_helper'
 require_relative '../lib/ttt/game'
+
 
 describe TTT::Game do
 
