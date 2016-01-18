@@ -1,5 +1,3 @@
-require_relative 'computer_move'
-
 module TTT
   class Game
 
