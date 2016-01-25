@@ -67,6 +67,10 @@ module TTT
       @size = size
     end
 
+    def winning_marker
+      solved_board?[0]
+    end
+
     private
 
     def row_solved?

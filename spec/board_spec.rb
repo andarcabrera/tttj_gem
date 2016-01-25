@@ -120,6 +120,14 @@ describe TTT::Board do
     end
   end
 
+  describe "#winning-marker" do
+    it 'returns the winning marker on the board' do
+      board.set_surface(["X", "X", "X", "Y", "4", "5", "6", "7", "Y"])
+
+      expect(board.winning_marker).to eq('X')
+    end
+  end
+
   describe "#next_marker" do
     it 'returns the next_marker on the board' do
       board.set_surface(["X", "Y", "X", "3", "4", "5", "6", "7", "Y"])
