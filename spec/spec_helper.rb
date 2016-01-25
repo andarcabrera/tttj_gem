@@ -6,5 +6,3 @@ SimpleCov.start do
 require_relative '../lib/ttt/computer_move'
 require_relative '../lib/ttt/board'
 require_relative '../lib/ttt/game'
-require_relative '../lib/ttt/players/player'
-require_relative '../lib/ttt/players/human_player'
