@@ -5,5 +5,9 @@ module TTT
       board.solved_board? != nil || board.tied_board?
     end
 
+    def move(spot, marker)
+
+    end
+
   end
 end
