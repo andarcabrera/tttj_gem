@@ -184,12 +184,22 @@
         1,
         null,
         1,
-        2,
-        2,
+        3,
+        3,
+        null,
+        null
+      ],
+      "/Users/andacabrera29/Desktop/ttt_gem/lib/ttt/players/human_player.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
         null,
         null
       ]
     },
-    "timestamp": 1453736116
+    "timestamp": 1453739788
   }
 }

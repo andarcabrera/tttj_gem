@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-25T09:35:16-06:00">2016-01-25T09:35:16-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-25T10:36:28-06:00">2016-01-25T10:36:28-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         25015.6
+         24034.66
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>4</b> files in total.
-    <b>98</b> relevant lines. 
-    <span class="green"><b>98</b> lines covered</span> and
+    <b>5</b> files in total.
+    <b>102</b> relevant lines. 
+    <span class="green"><b>102</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -81,13 +81,23 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#4554267cd06b863a06f0f9ec2908e25631c35858" class="src_link" title="lib/ttt/players/human_player.rb">lib/ttt/players/human_player.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>8</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#200bf39b6352c7fe1d803e86f5ffc072c94f266c" class="src_link" title="lib/ttt/players/player.rb">lib/ttt/players/player.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>8</td>
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.8</td>
       </tr>
       
     </tbody>
@@ -1192,6 +1202,72 @@
   </pre>
 </div>
       
+        <div class="source_table" id="4554267cd06b863a06f0f9ec2908e25631c35858">
+  <div class="header">
+    <h3>lib/ttt/players/human_player.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;player&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class HumanPlayer &lt; Player</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def pick_spot(user_input)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="200bf39b6352c7fe1d803e86f5ffc072c94f266c">
   <div class="header">
     <h3>lib/ttt/players/player.rb</h3>
@@ -1230,14 +1306,14 @@
           <code class="ruby">  def initialize(name, marker)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">    @name = name</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    @marker = marker</code>
         </li>
