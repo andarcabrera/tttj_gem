@@ -62,6 +62,13 @@ describe TTT::Game do
     end
   end
 
+  describe "#previous_player" do
+    it 'returns the player that made the move a turn ago' do
+      simulate_game([0, 4, 1, 5, 8])
+
+      expect(game.previous_player).to eq({:name=>"Anda", :marker=>"X", :type=>"human"})
+    end
+  end
   def simulate_game(array)
     array.each {|spot| game.make_move(spot)}
   end

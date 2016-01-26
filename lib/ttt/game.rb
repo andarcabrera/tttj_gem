@@ -35,6 +35,11 @@ module TTT
       current_player = @players.find {|player| player[:marker] == marker}
     end
 
+    def previous_player
+      marker = @board.next_marker
+      previous_player = @players.find {|player| player[:marker] != marker}
+    end
+
     def game_winner
       @players.find {|player| player[:marker] == @board.winning_marker}
     end
