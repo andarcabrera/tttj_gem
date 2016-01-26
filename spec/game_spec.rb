@@ -47,7 +47,7 @@ describe TTT::Game do
     context "player is computer" do
       it "returns spot selected by computer" do
         game.make_move(4)
-        allow(game).to receive(:computer_move).and_return(5)
+        allow(TTT::ComputerMove).to receive(:computer_move).and_return(5)
 
         expect(game.selected_spot).to eq(5)
       end
