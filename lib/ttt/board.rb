@@ -68,7 +68,9 @@ module TTT
     end
 
     def winning_marker
-      solved_board?[0]
+      if solved_board?
+        solved_board?[0]
+      end
     end
 
     private

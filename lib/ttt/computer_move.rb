@@ -1,6 +1,6 @@
 module TTT
 
-  module ComputerMove
+  class ComputerMove
 
     def self.computer_move(board)
       return board.available_spots.sample if board.available_spots.count >= 13 && board.size == 16

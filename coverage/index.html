@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-25T16:01:36-06:00">2016-01-25T16:01:36-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-25T20:26:47-06:00">2016-01-25T20:26:47-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         20437.95
+         20269.17
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>3</b> files in total.
-    <b>120</b> relevant lines. 
-    <span class="green"><b>119</b> lines covered</span> and
+    <b>121</b> relevant lines. 
+    <span class="green"><b>120</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#e1be9c717862d40b94d459ae8a5def04abe1d3d0" class="src_link" title="lib/ttt/board.rb">lib/ttt/board.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>107</td>
-        <td>57</td>
-        <td>57</td>
+        <td>109</td>
+        <td>58</td>
+        <td>58</td>
         <td>0</td>
-        <td>39571.0</td>
+        <td>38889.0</td>
       </tr>
       
       <tr>
@@ -101,8 +101,8 @@
     <h3>lib/ttt/board.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>57</b> relevant lines. 
-      <span class="green"><b>57</b> lines covered</span> and
+      <b>58</b> relevant lines. 
+      <span class="green"><b>58</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -242,8 +242,8 @@
           <code class="ruby">    def solved_board?</code>
         </li>
       
-        <li class="covered" data-hits="20532" data-linenumber="23">
-          <span class="hits">20532</span>
+        <li class="covered" data-hits="20534" data-linenumber="23">
+          <span class="hits">20534</span>
           
           <code class="ruby">      row_solved? || column_solved? || diagonals_solved?</code>
         </li>
@@ -434,8 +434,8 @@
           <code class="ruby">    def surface</code>
         </li>
       
-        <li class="covered" data-hits="221299" data-linenumber="55">
-          <span class="hits">221299</span>
+        <li class="covered" data-hits="221303" data-linenumber="55">
+          <span class="hits">221303</span>
           
           <code class="ruby">      @surface</code>
         </li>
@@ -533,25 +533,25 @@
         <li class="covered" data-hits="2" data-linenumber="71">
           <span class="hits">2</span>
           
-          <code class="ruby">      solved_board?[0]</code>
+          <code class="ruby">      if solved_board?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="covered" data-hits="2" data-linenumber="72">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        solved_board?[0]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="74">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="74">
           
-          <code class="ruby">    private</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
@@ -563,190 +563,202 @@
         <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
-          <code class="ruby">    def row_solved?</code>
+          <code class="ruby">    private</code>
         </li>
       
-        <li class="covered" data-hits="97007" data-linenumber="77">
-          <span class="hits">97007</span>
-          
-          <code class="ruby">      partioned_board.find {|row| row.uniq.length == 1}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="80">
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def row_solved?</code>
+        </li>
+      
+        <li class="covered" data-hits="97011" data-linenumber="79">
+          <span class="hits">97011</span>
+          
+          <code class="ruby">      partioned_board.find {|row| row.uniq.length == 1}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="82">
           <span class="hits">1</span>
           
           <code class="ruby">    def column_solved?</code>
         </li>
       
-        <li class="covered" data-hits="88587" data-linenumber="81">
+        <li class="covered" data-hits="88587" data-linenumber="83">
           <span class="hits">88587</span>
           
           <code class="ruby">      partioned_board.transpose.find {|row| row.uniq.length == 1}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="86">
           <span class="hits">1</span>
           
           <code class="ruby">    def diagonals_solved?</code>
         </li>
       
-        <li class="covered" data-hits="14396" data-linenumber="85">
+        <li class="covered" data-hits="14396" data-linenumber="87">
           <span class="hits">14396</span>
           
           <code class="ruby">      diagonals = [left_diagonal, right_diagonal]</code>
         </li>
       
-        <li class="covered" data-hits="41950" data-linenumber="86">
+        <li class="covered" data-hits="41950" data-linenumber="88">
           <span class="hits">41950</span>
           
           <code class="ruby">      diagonals.find {|row| row.uniq.length == 1}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
+        <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
           <code class="ruby">    def left_diagonal</code>
         </li>
       
-        <li class="covered" data-hits="14396" data-linenumber="90">
+        <li class="covered" data-hits="14396" data-linenumber="92">
           <span class="hits">14396</span>
           
           <code class="ruby">      diagonal = []</code>
         </li>
       
-        <li class="covered" data-hits="69327" data-linenumber="91">
+        <li class="covered" data-hits="69327" data-linenumber="93">
           <span class="hits">69327</span>
           
           <code class="ruby">      partioned_board.select.with_index {|row, index| diagonal &lt;&lt; row[index]}</code>
         </li>
       
-        <li class="covered" data-hits="14396" data-linenumber="92">
+        <li class="covered" data-hits="14396" data-linenumber="94">
           <span class="hits">14396</span>
           
           <code class="ruby">      diagonal</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
           <code class="ruby">    def right_diagonal</code>
         </li>
       
-        <li class="covered" data-hits="14396" data-linenumber="96">
+        <li class="covered" data-hits="14396" data-linenumber="98">
           <span class="hits">14396</span>
           
           <code class="ruby">      diagonal = []</code>
         </li>
       
-        <li class="covered" data-hits="69327" data-linenumber="97">
+        <li class="covered" data-hits="69327" data-linenumber="99">
           <span class="hits">69327</span>
           
           <code class="ruby">      partioned_board.select.with_index {|row, index| diagonal &lt;&lt; row[(index-(row.length - 1)).abs]}</code>
         </li>
       
-        <li class="covered" data-hits="14396" data-linenumber="98">
+        <li class="covered" data-hits="14396" data-linenumber="100">
           <span class="hits">14396</span>
           
           <code class="ruby">      diagonal</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="never" data-hits="" data-linenumber="102">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
+        <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
           <code class="ruby">    def partioned_board</code>
         </li>
       
-        <li class="covered" data-hits="67924" data-linenumber="102">
-          <span class="hits">67924</span>
+        <li class="covered" data-hits="67926" data-linenumber="104">
+          <span class="hits">67926</span>
           
           <code class="ruby">      splitter = Math.sqrt(surface.length).to_i</code>
         </li>
       
-        <li class="covered" data-hits="67924" data-linenumber="103">
-          <span class="hits">67924</span>
+        <li class="covered" data-hits="67926" data-linenumber="105">
+          <span class="hits">67926</span>
           
           <code class="ruby">      surface.each_slice(splitter).to_a</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="105">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby">end</code>
@@ -785,7 +797,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  module ComputerMove</code>
+          <code class="ruby">  class ComputerMove</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -1295,7 +1307,7 @@
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">        computer_move(@board)</code>
+          <code class="ruby">        computer_move</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -1415,7 +1427,7 @@
         <li class="missed" data-hits="0" data-linenumber="49">
           
           
-          <code class="ruby">      TTT::ComputerMove(@board)</code>
+          <code class="ruby">      TTT::ComputerMove.computer_move(@board)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
