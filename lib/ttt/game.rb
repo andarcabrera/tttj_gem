@@ -1,7 +1,8 @@
 module TTT
   class Game
 
-    def initialize(players, human_move, size = 9)
+    def initialize(db, players, human_move, size = 9)
+      @db = db
       @players = players
       @human_move = human_move
       @markers = @players.map {|player| player[:marker]}
@@ -16,6 +17,9 @@ module TTT
     def make_move(selected_spot)
       marker = @board.next_marker
       @board.fill_spot(selected_spot, marker)
+      if game_over?
+        @db.save_game(current_state, @markers)
+      end
     end
 
     def current_state
