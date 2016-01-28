@@ -22,6 +22,10 @@ module TTT
       end
     end
 
+    def manually_update_board(spot)
+      @board.fill_spot(spot, marker)
+    end
+
     def current_state
       @board.surface
     end
