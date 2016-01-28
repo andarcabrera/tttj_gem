@@ -48,6 +48,10 @@ module TTT
       @players.find {|player| player[:marker] == @board.winning_marker}
     end
 
+    def markers
+      @markers
+    end
+
     private
 
     def player_type
