@@ -22,7 +22,7 @@ module TTT
       end
     end
 
-    def manually_update_board(spot)
+    def manually_update_board(spot, marker)
       @board.fill_spot(spot, marker)
     end
 
