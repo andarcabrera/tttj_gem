@@ -7,7 +7,8 @@ describe TTT::Game do
 
   let(:players) {[{:name=>"Anda", :marker=>"X", :type=>"human"}, {:name=>"Mary", :marker=>"Y", :type=>"computer"}]}
   let(:human_move) { double 'human_move' }
-  let(:game) { TTT:: Game.new(players, human_move)}
+  let(:db) { double 'db', :save_game => nil }
+  let(:game) { TTT:: Game.new(db, players, human_move)}
 
   describe "game_over?" do
     it 'returns false if board is not solved or tied' do
