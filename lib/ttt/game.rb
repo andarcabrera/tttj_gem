@@ -26,9 +26,9 @@ module TTT
       @board.surface
     end
 
-    def selected_spot
+    def selected_spot(spot = nil)
       if player_type == "human"
-        @human_move.pick_spot(@board, spot = nil)
+        @human_move.pick_spot(@board, spot)
       elsif player_type == "computer"
         computer_move
       end
