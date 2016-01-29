@@ -7,7 +7,6 @@ module TTT
       until board.available_spot?(spot)
         @input.error
         spot = @input.get_spot
-        p spot
       end
       spot
     end

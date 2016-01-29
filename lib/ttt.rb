@@ -1,4 +1,3 @@
-require_relative 'ttt/players/player'
 require_relative 'ttt/players/human_player'
 require_relative 'ttt/players/computer_player'
 require_relative 'ttt/board'
