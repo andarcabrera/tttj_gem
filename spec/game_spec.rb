@@ -63,6 +63,20 @@ describe TTT::Game do
     end
   end
 
+  describe "#manually_update_board" do
+    it "updates the board with given board status" do
+      game.manually_update_board(3, "N")
+
+      expect(game.current_state).to eq(["0", "1", "2", "N", "4", "5", "6", "7", "8"])
+    end
+  end
+
+  describe "#markers" do
+    it "returns the markers" do
+      expect(game.markers).to eq(["X", "Y"])
+    end
+  end
+
   describe "#previous_player" do
     it 'returns the player that made the move a turn ago' do
       simulate_game([0, 4, 1, 5, 8])
@@ -70,6 +84,7 @@ describe TTT::Game do
       expect(game.previous_player).to eq({:name=>"Anda", :marker=>"X", :type=>"human"})
     end
   end
+
   def simulate_game(array)
     array.each {|spot| game.make_move(spot)}
   end
