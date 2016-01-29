@@ -5,10 +5,11 @@ require_relative '../lib/ttt/game'
 
 describe TTT::Game do
 
-  let(:players) {[{:name=>"Anda", :marker=>"X", :type=>"human"}, {:name=>"Mary", :marker=>"Y", :type=>"computer"}]}
-  let(:human_move) { double 'human_move' }
+  let(:player1) { double 'player1', :marker => "X", :name => "Anda" }
+  let(:player2) { double 'player2', :marker => "Y", :name => "Eli" }
+  let(:players) { [player1, player2] }
   let(:db) { double 'db', :save_game => nil }
-  let(:game) { TTT:: Game.new(db, players, human_move)}
+  let(:game) { TTT::Game.new(db, players)}
 
   describe "game_over?" do
     it 'returns false if board is not solved or tied' do
@@ -30,28 +31,18 @@ describe TTT::Game do
 
   describe "move" do
      it 'updates spot with given marker' do
-      game.make_move(5)
+       allow(player1).to receive(:pick_spot).and_return(1)
+       game.make_move
 
-      expect(game.current_state).to eq(["0", "1", "2", "3", "4", "X", "6", "7", "8"])
-    end
-  end
-
-  describe "#selected_spot" do
-    context "player is human" do
-      it "returns spot selected by human" do
-        allow(human_move).to receive(:pick_spot).and_return(3)
-
-        expect(game.selected_spot).to eq(3)
-      end
+       expect(game.current_state).to eq(["0", "X", "2", "3", "4", "5", "6", "7", "8"])
     end
 
-    context "player is computer" do
-      it "returns spot selected by computer" do
-        game.make_move(4)
-        allow(TTT::ComputerMove).to receive(:computer_move).and_return(5)
+     it 'saves the game when the game is over' do
+       allow(player1).to receive(:pick_spot).and_return('0', '1', '2', '3')
+       allow(player2).to receive(:pick_spot).and_return('3', '4', '5', '6')
+       5.times {game.make_move}
 
-        expect(game.selected_spot).to eq(5)
-      end
+       expect(game.game_over?).to be(true)
     end
   end
 
@@ -59,7 +50,7 @@ describe TTT::Game do
     it 'returns the player with the winning marker' do
       simulate_game([0, 4, 1, 5, 2])
 
-      expect(game.game_winner).to eq({:name=>"Anda", :marker=>"X", :type=>"human"})
+      expect(game.game_winner).to eq(player1)
     end
   end
 
@@ -81,11 +72,14 @@ describe TTT::Game do
     it 'returns the player that made the move a turn ago' do
       simulate_game([0, 4, 1, 5, 8])
 
-      expect(game.previous_player).to eq({:name=>"Anda", :marker=>"X", :type=>"human"})
+      expect(game.previous_player).to eq(player1)
     end
   end
 
   def simulate_game(array)
-    array.each {|spot| game.make_move(spot)}
+    array.each do |spot|
+      marker = game.current_player.marker
+      game.manually_update_board(spot, marker)
+    end
   end
 end
