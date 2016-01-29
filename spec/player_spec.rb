@@ -1,4 +1,4 @@
-require_relative '../lib/ttt/players/player'
+require_relative '../lib/ttt/player'
 
 describe TTT::Player do
 

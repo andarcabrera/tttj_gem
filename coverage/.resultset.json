@@ -225,7 +225,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/ttt_gem/lib/ttt/players/computer_player.rb": [
+      "/Users/andacabrera29/Desktop/ttt_gem/lib/ttt/computer_player.rb": [
         1,
         1,
         null,
@@ -238,7 +238,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/ttt_gem/lib/ttt/players/player.rb": [
+      "/Users/andacabrera29/Desktop/ttt_gem/lib/ttt/player.rb": [
         1,
         1,
         null,
@@ -252,7 +252,7 @@
         null,
         null
       ],
-      "/Users/andacabrera29/Desktop/ttt_gem/lib/ttt/players/human_player.rb": [
+      "/Users/andacabrera29/Desktop/ttt_gem/lib/ttt/human_player.rb": [
         1,
         null,
         1,
@@ -270,6 +270,6 @@
         null
       ]
     },
-    "timestamp": 1454105726
+    "timestamp": 1454110330
   }
 }
