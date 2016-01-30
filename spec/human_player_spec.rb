@@ -8,14 +8,14 @@ describe TTT::HumanPlayer do
 
   describe "#pick_spot" do
     it "returns the spot selected by the human user when the spot is available" do
-      allow(board).to receive(:available_spot?).and_return(true)
+      allow(board).to receive(:available_spot).and_return(true)
       allow(input).to receive(:get_spot).and_return(5)
 
       expect(human.pick_spot(board)).to eq(5)
     end
 
     it "raises an erorr if the spot selected by the human user is not available" do
-      allow(board).to receive(:available_spot?).and_return(false, false, true)
+      allow(board).to receive(:available_spot).and_return(false, false, true)
       allow(input).to receive(:get_spot).and_return("k", "L", 3)
 
       expect(human.pick_spot(board)).to eq(3)

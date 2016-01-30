@@ -7,7 +7,7 @@ describe TTT::ComputerPlayer do
 
   describe "#pick_spot" do
     it "returns the spot selected by the computer" do
-      expect(TTT::ComputerMove).to receive(:select_spot).and_return(5)
+      expect(TTT::ComputerMove).to receive(:computer_move).and_return(5)
 
       expect(computer.pick_spot(board)).to eq(5)
     end
