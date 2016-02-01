@@ -15,12 +15,16 @@ module TTT
 
     def make_move
       marker = @board.next_marker
-      spot = current_player.pick_spot(@board)
+      spot = select_spot
       @board.fill_spot(spot, marker) if spot != "break loop"
       if game_over?
         @db.save_game(current_state, @markers)
       end
       spot
+    end
+
+    def select_spot
+      spot = current_player.pick_spot(@board)
     end
 
     def manually_update_board(spot, marker)
