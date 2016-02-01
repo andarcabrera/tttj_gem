@@ -5,7 +5,7 @@ module TTT
     def pick_spot(board)
       spot = @input.get_spot
       until board.available_spot(spot)
-        break if spot == "break loop"
+        break if @input.no_more_moves_allowed?
         @input.error
         spot = @input.get_spot
       end

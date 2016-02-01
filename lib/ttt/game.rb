@@ -31,6 +31,10 @@ module TTT
       @board.fill_spot(spot, marker)
     end
 
+    def any_moves_left?
+      current_player.ui.another_move_allowed?
+    end
+
     def current_state
       @board.surface
     end

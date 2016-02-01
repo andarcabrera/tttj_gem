@@ -1,7 +1,7 @@
 module TTT
   class Player
 
-    attr_reader :marker, :name
+    attr_reader :marker, :name, :input
 
     def initialize(name, marker, input = nil)
       @name = name

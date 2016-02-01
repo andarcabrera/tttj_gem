@@ -14,18 +14,20 @@ describe TTT::HumanPlayer do
       expect(human.pick_spot(board)).to eq(5)
     end
 
-    it "raises an erorr if the spot selected by the human user is not available" do
+    it "asks for spot until available spot is found or no more moves are allowed" do
       allow(board).to receive(:available_spot).and_return(false, false, true)
       allow(input).to receive(:get_spot).and_return("k", "L", 3)
+      allow(input).to receive(:no_more_moves_allowed?).and_return(false)
 
       expect(human.pick_spot(board)).to eq(3)
     end
 
-    it "breaks lool if spot is break lool" do
+    it "breaks loop is no more moves are allowed" do
       allow(board).to receive(:available_spot).and_return(false)
-      allow(input).to receive(:get_spot).and_return("break loop")
+      allow(input).to receive(:get_spot).and_return(5, 5)
+      allow(input).to receive(:no_more_moves_allowed?).and_return(true)
 
-      expect(human.pick_spot(board)).to eq("break loop")
+      expect(human.pick_spot(board)).to eq(5)
     end
   end
 end
