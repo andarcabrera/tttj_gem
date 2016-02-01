@@ -29,7 +29,7 @@ describe TTT::Game do
     end
   end
 
-  describe "move" do
+  describe "make_move" do
      it 'updates spot with given marker' do
        allow(player1).to receive(:pick_spot).and_return(1)
        game.make_move

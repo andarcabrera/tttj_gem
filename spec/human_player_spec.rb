@@ -20,5 +20,12 @@ describe TTT::HumanPlayer do
 
       expect(human.pick_spot(board)).to eq(3)
     end
+
+    it "breaks lool if spot is break lool" do
+      allow(board).to receive(:available_spot).and_return(false)
+      allow(input).to receive(:get_spot).and_return("break loop")
+
+      expect(human.pick_spot(board)).to eq("break loop")
+    end
   end
 end
