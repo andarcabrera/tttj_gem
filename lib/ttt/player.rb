@@ -1,12 +1,12 @@
 module TTT
   class Player
 
-    attr_reader :marker, :name, :input
+    attr_reader :marker, :name, :ui
 
-    def initialize(name, marker, input = nil)
+    def initialize(name, marker, ui = nil)
       @name = name
       @marker = marker
-      @input = input
+      @ui = ui
     end
   end
 end

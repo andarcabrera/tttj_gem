@@ -6,6 +6,7 @@ require_relative '../lib/ttt/game'
 describe TTT::Game do
 
   let(:player1) { double 'player1', :marker => "X", :name => "Anda" }
+  let(:ui) { double 'ui' }
   let(:player2) { double 'player2', :marker => "Y", :name => "Eli" }
   let(:players) { [player1, player2] }
   let(:db) { double 'db', :save_game => nil }
@@ -45,6 +46,22 @@ describe TTT::Game do
        expect(game.game_over?).to be(true)
     end
   end
+
+  describe "#no_moves_left?" do
+     it 'returns true if no other moves are possible' do
+       allow(player1).to receive(:ui).and_return(ui)
+       allow(ui).to receive(:no_more_moves_allowed?).and_return(true)
+
+       expect(game.no_moves_left?).to be true
+    end
+
+     it 'returns false if other moves are possible' do
+       allow(player1).to receive(:ui).and_return(nil)
+
+       expect(game.no_moves_left?).to be false
+    end
+  end
+
 
   describe "#game_winner" do
     it 'returns the player with the winning marker' do

@@ -15,16 +15,12 @@ module TTT
 
     def make_move
       marker = @board.next_marker
-      spot = select_spot
-      @board.fill_spot(spot, marker) if spot != "break loop"
+      spot = current_player.pick_spot(@board)
+      @board.fill_spot(spot, marker) if spot != nil
       if game_over?
         @db.save_game(current_state, @markers)
       end
       spot
-    end
-
-    def select_spot
-      spot = current_player.pick_spot(@board)
     end
 
     def manually_update_board(spot, marker)
@@ -32,7 +28,11 @@ module TTT
     end
 
     def no_moves_left?
-      current_player.ui.no_more_moves_allowed?
+      if current_player.ui
+        current_player.ui.no_more_moves_allowed?
+      else
+        false
+      end
     end
 
     def current_state
