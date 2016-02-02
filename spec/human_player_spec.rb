@@ -23,11 +23,11 @@ describe TTT::HumanPlayer do
     end
 
     it "breaks loop is no more moves are allowed" do
-      allow(board).to receive(:available_spot).and_return(false)
-      allow(ui).to receive(:get_spot).and_return(5, 5)
-      allow(ui).to receive(:no_more_moves_allowed?).and_return(true)
+      allow(board).to receive(:available_spot).and_return(false, false)
+      allow(ui).to receive(:get_spot).and_return(5, 6)
+      allow(ui).to receive(:no_more_moves_allowed?).and_return(false, true)
 
-      expect(human.pick_spot(board)).to eq(5)
+      expect(human.pick_spot(board)).to eq(nil)
     end
   end
 end

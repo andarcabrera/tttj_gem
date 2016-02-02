@@ -8,7 +8,7 @@ module TTT
     end
 
     def available_spot(spot)
-      !markers.include?(surface[spot.to_i])
+      surface.include?(spot.to_s)
     end
 
     def available_spots
