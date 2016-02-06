@@ -1,16 +1,20 @@
+require 'ttt/board'
+
 module TTT
   class Game
+
+    attr_reader :markers
 
     def initialize(db, players, size = 9)
       @db = db
       @players = players
       @markers = @players.map {|player| player.marker}
       @size = size
-      @board = Board.new(@markers, size)
+      @board = TTT::Board.new(@markers, size)
     end
 
     def game_over?
-      @board.solved_board? != nil || @board.tied_board?
+      @board.solved_board? || @board.tied_board?
     end
 
     def make_move
@@ -41,22 +45,22 @@ module TTT
 
     def current_player
       marker = @board.next_marker
-      current_player = @players.find {|player| player.marker == marker}
+      @players.find(&check_player(marker))
     end
 
     def previous_player
       marker = @board.next_marker
-      previous_player = @players.find {|player| player.marker != marker}
+      @players.find {|player| player.marker != marker}
     end
 
     def game_winner
-      @players.find {|player| player.marker == @board.winning_marker}
+      marker = @board.winning_marker
+      @players.find(&check_player(marker))
     end
 
-    def markers
-      @markers
+    def check_player(marker)
+      Proc.new {|player| player.marker == marker}
     end
-
   end
 end
 

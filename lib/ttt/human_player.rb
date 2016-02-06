@@ -1,4 +1,4 @@
-require_relative 'player'
+require 'ttt/player'
 
 module TTT
   class HumanPlayer < TTT::Player

@@ -1,13 +1,15 @@
 module TTT
   class Board
 
+    attr_accessor :size, :markers, :surface
+
     def initialize(markers = [], size = 9)
       @size = size
       @surface = (0..size-1).map{|el| el.to_s}
       @markers = markers
     end
 
-    def available_spot(spot)
+    def available_spot?(spot)
       surface.include?(spot.to_s)
     end
 
@@ -20,11 +22,11 @@ module TTT
     end
 
     def solved_board?
-      row_solved? || column_solved? || diagonals_solved?
+      !check_board.nil?
     end
 
     def tied_board?
-      surface.find { |spot| !markers.include?(spot)} == nil && !solved_board?
+      surface.all? { |spot| markers.include?(spot)} && !solved_board?
     end
 
     def next_marker
@@ -43,67 +45,44 @@ module TTT
       end
     end
 
-    def set_markers(markers)
-      @markers = markers
-    end
-
-    def markers
-      @markers
-    end
-
-    def surface
-      @surface
-    end
-
-    def set_surface(surface)
-      @surface = surface
-    end
-
-    def size
-      @size
-    end
-
-    def set_size(size)
-      @size = size
-    end
-
     def winning_marker
-      if solved_board?
-        solved_board?[0]
-      end
+      check_board[0]
     end
 
     private
 
-    def row_solved?
-      partioned_board.find {|row| row.uniq.length == 1}
+    def check_board
+      check_rows || check_columns|| check_diagonals
     end
 
-    def column_solved?
-      partioned_board.transpose.find {|row| row.uniq.length == 1}
+    def check_rows
+      partioned_board.find(&winning_combination)
     end
 
-    def diagonals_solved?
+    def check_columns
+      partioned_board.transpose.find(&winning_combination)
+    end
+
+    def check_diagonals
       diagonals = [left_diagonal, right_diagonal]
-      diagonals.find {|row| row.uniq.length == 1}
+      diagonals.find(&winning_combination)
     end
 
     def left_diagonal
-      diagonal = []
-      partioned_board.select.with_index {|row, index| diagonal << row[index]}
-      diagonal
+      partioned_board.map.with_index {|row, index| row[index]}
     end
 
     def right_diagonal
-      diagonal = []
-      partioned_board.select.with_index {|row, index| diagonal << row[(index-(row.length - 1)).abs]}
-      diagonal
+      partioned_board.map.with_index {|row, index| row[(index-(row.length - 1)).abs]}
+    end
+
+    def winning_combination
+      Proc.new {|row| row.uniq.length == 1 }
     end
 
     def partioned_board
       splitter = Math.sqrt(surface.length).to_i
       surface.each_slice(splitter).to_a
     end
-
   end
 end

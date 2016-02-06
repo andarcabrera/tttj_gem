@@ -1,5 +1,5 @@
-require_relative 'player'
-require_relative 'computer_move'
+require 'ttt/player'
+require 'ttt/computer_move'
 
 module TTT
   class ComputerPlayer < TTT::Player
