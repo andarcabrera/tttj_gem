@@ -43,6 +43,10 @@ module TTT
       @board.surface
     end
 
+    def update_board_state(new_state)
+      @board.surface = new_state
+    end
+
     def current_player
       marker = @board.next_marker
       @players.find(&check_player(marker))
@@ -56,6 +60,10 @@ module TTT
     def game_winner
       marker = @board.winning_marker
       @players.find(&check_player(marker))
+    end
+
+    def game_won_by_player?
+      @board.solved_board?
     end
 
     def check_player(marker)
