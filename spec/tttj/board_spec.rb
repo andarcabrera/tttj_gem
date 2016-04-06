@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'ttt/board'
+require 'tttj/board'
 
 describe TTT::Board do
 

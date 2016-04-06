@@ -1,0 +1,6 @@
+require_relative 'tttj/board'
+require_relative 'tttj/game'
+require_relative 'tttj/computer_move'
+require_relative 'tttj/player'
+require_relative 'tttj/human_player'
+require_relative 'tttj/computer_player'

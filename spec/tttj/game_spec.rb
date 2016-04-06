@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'ttt/game'
+require 'tttj/game'
 
 
 describe TTT::Game do
@@ -8,8 +8,7 @@ describe TTT::Game do
   let(:ui) { double 'ui' }
   let(:player2) { double 'player2', :marker => "Y", :name => "Eli" }
   let(:players) { [player1, player2] }
-  let(:db) { double 'db', :save_game => nil }
-  let(:game) { TTT::Game.new(db, players)}
+  let(:game) { TTT::Game.new(players)}
 
   describe "game_over?" do
     it 'returns false if board is not solved or tied' do

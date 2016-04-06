@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'ttt/player'
+require 'tttj/player'
 
 describe TTT::Player do
 

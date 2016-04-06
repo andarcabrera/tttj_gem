@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'ttt/computer_player'
+require 'tttj/computer_player'
 
 describe TTT::ComputerPlayer do
 

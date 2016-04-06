@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'ttt/computer_move'
+require 'tttj/computer_move'
 
 
 describe TTT::ComputerMove do

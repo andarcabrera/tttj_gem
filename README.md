@@ -1,5 +1,8 @@
-# Data base gem
-The TTT gem contains the board, human and computer players, minimax, game logic and db connection
+# TTT gem
+
+This gem is optimized to work with the [Java HTTP Server](https://github.com/andarcabrera/HTTPServer)
+
+The TTT gem contains the board, human and computer players, minimax, and game logic
 
 ## Requirement
 - ruby ~> 2.2.1
@@ -16,7 +19,7 @@ Clone the repository and install.
 ## Usage
 Include gem in your app and installl
 
-```gem install ./ttt-0.0.0.gem```
+```gem install ./tttj-0.0.0.gem```
 
 ## Tests
 From the root directory run:
