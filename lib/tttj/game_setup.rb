@@ -1,6 +1,6 @@
-require_relative 'tttj/computer_player'
-require_relative 'tttj/human_player'
-require_relative 'tttj/user_interface'
+require_relative 'computer_player'
+require_relative 'human_player'
+require_relative 'user_interface'
 
 
 module TTT
