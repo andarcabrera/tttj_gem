@@ -1,4 +1,4 @@
-require 'tttj/board'
+require_relative 'tttj/board'
 
 module TTT
   class Game
